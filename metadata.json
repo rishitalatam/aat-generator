@@ -1,0 +1,8 @@
+{
+  "name": "IARE SMART ACADEMIC AI",
+  "description": "Your All-in-One AI Academic Assistant for Institute of Aeronautical Engineering students. Generate AAT PPTs, Assignments, Project Reports, and Case Studies in official IARE format.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

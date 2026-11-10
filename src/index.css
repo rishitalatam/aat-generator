@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Default: IARE Academic Navy */
+  --accent-50: #eff6ff;
+  --accent-100: #dbeafe;
+  --accent-200: #bfdbfe;
+  --accent-400: #60a5fa;
+  --accent-500: #3b82f6;
+  --accent-600: #1d4ed8;
+  --accent-700: #0b3b60;
+  --accent-800: #1e3a8a;
+  --accent-rgb: 29, 78, 216;
+}
+
+[data-accent="amber"] {
+  --accent-50: #fffbeb;
+  --accent-100: #fef3c7;
+  --accent-200: #fde68a;
+  --accent-400: #fbbf24;
+  --accent-500: #f59e0b;
+  --accent-600: #d97706;
+  --accent-700: #b45309;
+  --accent-800: #92400e;
+  --accent-rgb: 217, 119, 6;
+}
+
+[data-accent="emerald"] {
+  --accent-50: #ecfdf5;
+  --accent-100: #d1fae5;
+  --accent-200: #a7f3d0;
+  --accent-400: #34d399;
+  --accent-500: #10b981;
+  --accent-600: #059669;
+  --accent-700: #047857;
+  --accent-800: #064e3b;
+  --accent-rgb: 5, 150, 105;
+}
+
+[data-accent="purple"] {
+  --accent-50: #f5f3ff;
+  --accent-100: #ede9fe;
+  --accent-200: #ddd6fe;
+  --accent-400: #a78bfa;
+  --accent-500: #8b5cf6;
+  --accent-600: #7c3aed;
+  --accent-700: #6d28d9;
+  --accent-800: #5b21b6;
+  --accent-rgb: 124, 58, 237;
+}
+
+[data-accent="crimson"] {
+  --accent-50: #fff1f2;
+  --accent-100: #ffe4e6;
+  --accent-200: #fecdd3;
+  --accent-400: #fb7185;
+  --accent-500: #f43f5e;
+  --accent-600: #e11d48;
+  --accent-700: #be123c;
+  --accent-800: #9f1239;
+  --accent-rgb: 225, 29, 72;
+}
+
+/* Accent utility classes */
+.bg-accent {
+  background-color: var(--accent-600) !important;
+}
+.hover\:bg-accent-hover:hover {
+  background-color: var(--accent-700) !important;
+}
+.text-accent {
+  color: var(--accent-600) !important;
+}
+.dark .text-accent {
+  color: var(--accent-400) !important;
+}
+.border-accent {
+  border-color: var(--accent-500) !important;
+}
+.bg-accent-light {
+  background-color: var(--accent-50) !important;
+}
+.dark .bg-accent-light {
+  background-color: rgba(var(--accent-rgb), 0.18) !important;
+}
+.ring-accent {
+  --tw-ring-color: var(--accent-500) !important;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.font-academic {
+  font-family: 'Tinos', 'Times New Roman', Times, serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}

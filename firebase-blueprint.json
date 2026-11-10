@@ -1,0 +1,53 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with academic defaults and theme preferences",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "format": "email", "maxLength": 150 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "rollNumber": { "type": "string", "maxLength": 20 },
+        "branch": { "type": "string", "maxLength": 50 },
+        "section": { "type": "string", "maxLength": 10 },
+        "courseCode": { "type": "string", "maxLength": 20 },
+        "courseName": { "type": "string", "maxLength": 100 },
+        "theme": { "type": "string", "maxLength": 20 },
+        "accentColor": { "type": "string", "maxLength": 20 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "email"]
+    },
+    "AcademicDocument": {
+      "title": "AcademicDocument",
+      "description": "An academic document generated or edited by the student",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 300 },
+        "toolType": { "type": "string", "enum": ["aat_ppt", "aat_assignment", "project_report", "case_study"] },
+        "subjectName": { "type": "string", "maxLength": 150 },
+        "courseCode": { "type": "string", "maxLength": 50 },
+        "contentJson": { "type": "string" },
+        "summary": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "title", "toolType"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "UserProfile" },
+      "description": "Student profile data"
+    },
+    "/users/{userId}/documents/{documentId}": {
+      "schema": { "$ref": "AcademicDocument" },
+      "description": "Student generated academic documents and reports"
+    }
+  }
+}
