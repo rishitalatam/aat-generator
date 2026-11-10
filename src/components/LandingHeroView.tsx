@@ -45,11 +45,6 @@ export const LandingHeroView: React.FC<LandingHeroViewProps> = ({ onExploreGuest
     }
   };
 
-  const handleQuickDemoRoll = (demoRoll: string) => {
-    setRollNumber(demoRoll);
-    setPassword('iare@2026');
-  };
-
   return (
     <div className="max-w-5xl mx-auto space-y-10 py-6 sm:py-10 animate-in fade-in duration-300">
       {/* Hero Header */}
@@ -179,36 +174,6 @@ export const LandingHeroView: React.FC<LandingHeroViewProps> = ({ onExploreGuest
                   </>
                 )}
               </button>
-
-              {/* Demo Roll quick chips */}
-              <div className="pt-2">
-                <span className="text-[10px] text-slate-400 font-semibold block mb-1.5 text-center">
-                  Quick Student Test Logins:
-                </span>
-                <div className="flex items-center justify-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleQuickDemoRoll('22951A0501')}
-                    className="text-[10px] px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-mono hover:bg-slate-200"
-                  >
-                    22951A0501 (CSE)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleQuickDemoRoll('22951A6605')}
-                    className="text-[10px] px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-mono hover:bg-slate-200"
-                  >
-                    22951A6605 (AIML)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleQuickDemoRoll('22951A6708')}
-                    className="text-[10px] px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-mono hover:bg-slate-200"
-                  >
-                    22951A6708 (DS)
-                  </button>
-                </div>
-              </div>
             </form>
           ) : (
             <div className="space-y-4 text-center py-2">
